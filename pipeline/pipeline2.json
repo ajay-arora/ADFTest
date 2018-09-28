@@ -3,18 +3,11 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Wait11",
-				"type": "Wait",
-				"typeProperties": {
-					"waitTimeInSeconds": 1
-				}
-			},
-			{
-				"name": "Wait2",
+				"name": "WaitAa",
 				"type": "Wait",
 				"dependsOn": [
 					{
-						"activity": "Wait11",
+						"activity": "Get Metadata1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -23,7 +16,25 @@
 				"typeProperties": {
 					"waitTimeInSeconds": 1
 				}
+			},
+			{
+				"name": "Get Metadata1",
+				"type": "GetMetadata",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "AzureBlob2",
+						"type": "DatasetReference"
+					}
+				}
 			}
 		]
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

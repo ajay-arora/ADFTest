@@ -1,0 +1,68 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Wait1NewChanged",
+				"description": "Some wait description",
+				"type": "Wait",
+				"userProperties": [
+					{
+						"name": "Some user property name",
+						"value": "some user property value"
+					}
+				],
+				"typeProperties": {
+					"waitTimeInSeconds": 40
+				}
+			},
+			{
+				"name": "Wait2",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "Wait1NewChanged",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [
+					{
+						"name": "3",
+						"value": "3"
+					}
+				],
+				"typeProperties": {
+					"waitTimeInSeconds": 30
+				}
+			},
+			{
+				"name": "Wait3InMaster",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "Wait1NewChanged",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"typeProperties": {
+					"waitTimeInSeconds": 10
+				}
+			}
+		],
+		"parameters": {
+			"Param1": {
+				"type": "String",
+				"defaultValue": "Value1"
+			},
+			"Parm2": {
+				"type": "Int",
+				"defaultValue": 2
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
