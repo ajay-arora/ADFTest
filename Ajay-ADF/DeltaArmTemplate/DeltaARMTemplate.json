@@ -5,7 +5,7 @@
 		"factoryName": {
 			"type": "string",
 			"metadata": "Data Factory Name",
-			"defaultValue": "Ajay-ADF"
+			"defaultValue": "Ajay-aDF"
 		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
@@ -27,7 +27,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Wait1NewChanged123",
+						"name": "Wait1NewChanged1234",
 						"description": "Some wait description",
 						"type": "Wait",
 						"dependsOn": [],
@@ -46,7 +46,7 @@
 						"type": "Wait",
 						"dependsOn": [
 							{
-								"activity": "Wait1NewChanged123",
+								"activity": "Wait1NewChanged1234",
 								"dependencyConditions": [
 									"Succeeded"
 								]
@@ -67,7 +67,7 @@
 						"type": "Wait",
 						"dependsOn": [
 							{
-								"activity": "Wait1NewChanged123",
+								"activity": "Wait1NewChanged1234",
 								"dependencyConditions": [
 									"Completed"
 								]
