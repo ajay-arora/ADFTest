@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Wait1NewChanged",
+				"name": "Wait1NewChanged12",
 				"description": "Some wait description",
 				"type": "Wait",
 				"userProperties": [
@@ -17,11 +17,11 @@
 				}
 			},
 			{
-				"name": "Wait2",
+				"name": "Wait23334",
 				"type": "Wait",
 				"dependsOn": [
 					{
-						"activity": "Wait1NewChanged",
+						"activity": "Wait1NewChanged12",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -42,7 +42,7 @@
 				"type": "Wait",
 				"dependsOn": [
 					{
-						"activity": "Wait1NewChanged",
+						"activity": "Wait1NewChanged12",
 						"dependencyConditions": [
 							"Completed"
 						]
