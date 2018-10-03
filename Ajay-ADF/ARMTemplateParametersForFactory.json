@@ -3,7 +3,7 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"factoryName": {
-			"value": "Ajay-aDF"
+			"value": "Ajay-ADF"
 		},
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
