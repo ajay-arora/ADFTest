@@ -4,7 +4,7 @@
 		"runtimeState": "Stopped",
 		"pipeline": {
 			"pipelineReference": {
-				"referenceName": "pipeline1",
+				"referenceName": "pipeline11",
 				"type": "PipelineReference"
 			}
 		},
