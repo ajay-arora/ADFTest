@@ -1,0 +1,16 @@
+{
+	"name": "trigger145454545445",
+	"properties": {
+		"description": "sdaasdasdasd",
+		"runtimeState": "Stopped",
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2018-09-20T00:09:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

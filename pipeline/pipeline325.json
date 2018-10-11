@@ -1,0 +1,15 @@
+{
+	"name": "pipeline325",
+	"properties": {
+		"activities": [
+			{
+				"name": "Wait144",
+				"type": "Wait",
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -4,8 +4,8 @@
 	"properties": {
 		"type": "AzureTableStorage",
 		"typeProperties": {
-			"connectionString": "DefaultEndpointsProtocol=https;AccountName=0e2115southeastasia;",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFKQVktREZfOWZmM2M4NmYtMTUzNy00YWNhLTkxZjgtMGRhMWVkMTM4NWFmIg0KfQ=="
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=dfv2test;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFKQVktQURGX2EyZDAyMDRjLWJmZmMtNDI2OS1iYTc3LTU2NjZiYTRlZjU2MCINCn0="
 		}
 	}
 }
