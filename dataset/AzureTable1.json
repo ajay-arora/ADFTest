@@ -1,0 +1,14 @@
+{
+	"name": "AzureTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureTableStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureTable",
+		"typeProperties": {
+			"tableName": "RomeAsm5006f209224542ee83ExtensionLogEventVer1v020170321"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
