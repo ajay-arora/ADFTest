@@ -6,95 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory Name",
 			"defaultValue": "Ajay-ADF"
-		},
-		"integrationRuntime_integrationRuntime1": {
-			"type": "string",
-			"metadata": "Integration Runtime Name",
-			"defaultValue": "integrationRuntime1"
-		},
-		"AzureBlobStorage1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
-		},
-		"AzureBlobStorage2_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
-		},
-		"AzureSqlDW1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSqlDW1'"
-		},
-		"AzureTableStorage1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureTableStorage1'"
-		},
-		"CosmosDb1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'CosmosDb1'"
-		},
-		"SqlServer1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SqlServer1'"
-		},
-		"SqlServer2_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SqlServer2'"
-		},
-		"SqlServer3_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'SqlServer3'"
-		},
-		"AzureBlob1_properties_typeProperties_fileName": {
-			"type": "string",
-			"defaultValue": "MACommand32417a82-3a6f-4479-bd4d-6145028410eb.xml"
-		},
-		"AzureBlob1_properties_typeProperties_folderPath": {
-			"type": "string",
-			"defaultValue": "mamsasstore/RomeAsm5006f209224542ee83"
-		},
-		"AzureDataLakeStore1_properties_typeProperties_dataLakeStoreUri": {
-			"type": "string",
-			"defaultValue": "https://adfhdionadl.azuredatalakestore.net/webhdfs/v1"
-		},
-		"AzureDataLakeStore1_properties_typeProperties_tenant": {
-			"type": "string",
-			"defaultValue": "72f988bf-86f1-41af-91ab-2d7cd011db47"
-		},
-		"AzureDataLakeStore1_properties_typeProperties_subscriptionId": {
-			"type": "string",
-			"defaultValue": "1e42591f-1f0c-4c5a-b7f2-a268f6105ec5"
-		},
-		"AzureDataLakeStore1_properties_typeProperties_resourceGroupName": {
-			"type": "string",
-			"defaultValue": "adfhdionadl"
-		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://arsundaKV.vault.azure.net/"
-		},
-		"AzureKeyVault2_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://ADFBillingTest.vault.azure.net/"
-		},
-		"adobeload_blobstore_azure_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "dev-adobeloadblob-connectionstring"
-		},
-		"batchadobeload_batchservice_azure_properties_typeProperties_accountName": {
-			"type": "string",
-			"defaultValue": "devrzrimpwu2batch0"
-		},
-		"bluecore449_fs_sftp_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "ssimax_tmobile"
-		},
-		"layer3_s3_aws_properties_typeProperties_accessKeyId": {
-			"type": "string",
-			"defaultValue": "AKIAI466LBKQQGAT4WWQ"
-		},
-		"razr_keyvault_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://prdrzrsecwu2-vault0.vault.azure.net/"
 		}
 	},
 	"variables": {
@@ -110,16 +21,12 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
 					}
-				],
-				"annotations": []
-			},
-			"dependsOn": []
+				]
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/P261333477')]",
@@ -131,8 +38,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -140,7 +45,6 @@
 					{
 						"name": "Copy Data1",
 						"type": "Copy",
-						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -148,7 +52,6 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
 						"typeProperties": {
 							"source": {
 								"type": "BlobSource",
@@ -171,20 +74,17 @@
 						"inputs": [
 							{
 								"referenceName": "AzureBlob1",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "AzureTable1",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
-				],
-				"annotations": []
+				]
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/AzureBlob1')]",
@@ -200,16 +100,12 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
 					}
-				],
-				"annotations": []
-			},
-			"dependsOn": []
+				]
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/P4')]",
@@ -221,8 +117,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -230,8 +124,6 @@
 					{
 						"name": "Execute Pipeline1",
 						"type": "ExecutePipeline",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"pipeline": {
 								"referenceName": "PP12",
@@ -242,8 +134,7 @@
 				],
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
+				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/PP12')]"
@@ -259,8 +150,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -268,10 +157,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP11')]",
@@ -282,8 +169,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -291,10 +176,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP12')]",
@@ -305,8 +188,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -314,10 +195,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP13')]",
@@ -329,8 +208,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -338,10 +215,8 @@
 				],
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP14')]",
@@ -352,8 +227,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -361,10 +234,8 @@
 				],
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP15')]",
@@ -375,8 +246,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -384,10 +253,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP16')]",
@@ -398,8 +265,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -407,10 +272,8 @@
 				],
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP17')]",
@@ -421,8 +284,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -430,10 +291,8 @@
 				],
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP18')]",
@@ -444,8 +303,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -453,10 +310,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP19')]",
@@ -467,8 +322,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -476,10 +329,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP2')]",
@@ -490,8 +341,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -499,10 +348,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP20')]",
@@ -513,8 +360,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -522,10 +367,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP21')]",
@@ -536,8 +379,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -545,10 +386,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP22')]",
@@ -559,8 +398,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -568,10 +405,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP3')]",
@@ -582,8 +417,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -591,10 +424,8 @@
 				],
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP4')]",
@@ -605,8 +436,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -614,10 +443,8 @@
 				],
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP5')]",
@@ -628,8 +455,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -637,10 +462,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP6')]",
@@ -651,8 +474,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -660,10 +481,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP7')]",
@@ -674,8 +493,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -683,7 +500,6 @@
 					{
 						"name": "Web1",
 						"type": "WebActivity",
-						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -691,11 +507,9 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
 						"typeProperties": {
 							"url": "http://abc.com",
 							"method": "GET",
-							"headers": {},
 							"linkedServices": [
 								{
 									"referenceName": "AzureBlobStorage2",
@@ -707,12 +521,8 @@
 				],
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage2')]"
-			]
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP8')]",
@@ -723,8 +533,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -732,10 +540,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PP9')]",
@@ -746,8 +552,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -755,10 +559,8 @@
 				],
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipel27h624')]",
@@ -769,16 +571,12 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
 					}
-				],
-				"annotations": []
-			},
-			"dependsOn": []
+				]
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
@@ -791,7 +589,6 @@
 						"name": "Wait1New",
 						"description": "Some wait description",
 						"type": "Wait",
-						"dependsOn": [],
 						"userProperties": [
 							{
 								"name": "Some user property name",
@@ -834,7 +631,6 @@
 								]
 							}
 						],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 10
 						}
@@ -842,7 +638,6 @@
 					{
 						"name": "Get Metadata1",
 						"type": "GetMetadata",
-						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -850,12 +645,10 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
 								"referenceName": "AzureBlob1",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						}
 					}
@@ -872,8 +665,7 @@
 				},
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
+				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/AzureBlob1')]"
@@ -889,7 +681,6 @@
 						"name": "Wait1NewChanged1234",
 						"description": "Some wait description",
 						"type": "Wait",
-						"dependsOn": [],
 						"userProperties": [
 							{
 								"name": "Some user property name",
@@ -932,7 +723,6 @@
 								]
 							}
 						],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 10
 						}
@@ -940,7 +730,6 @@
 					{
 						"name": "Get Metadata1",
 						"type": "GetMetadata",
-						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -948,12 +737,10 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
 								"referenceName": "AzureBlob1",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						}
 					}
@@ -967,8 +754,7 @@
 						"type": "Int",
 						"defaultValue": 2
 					}
-				},
-				"annotations": []
+				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/AzureBlob1')]"
@@ -991,7 +777,6 @@
 								]
 							}
 						],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -999,7 +784,6 @@
 					{
 						"name": "Get Metadata1",
 						"type": "GetMetadata",
-						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -1007,17 +791,14 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
 								"referenceName": "AzureBlob2",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						}
 					}
-				],
-				"annotations": []
+				]
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/AzureBlob2')]"
@@ -1040,7 +821,6 @@
 								]
 							}
 						],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -1049,7 +829,6 @@
 						"name": "Get Metadata1",
 						"description": "c",
 						"type": "GetMetadata",
-						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -1057,20 +836,17 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
 								"referenceName": "AzureBlob1",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						}
 					}
 				],
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
+				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/AzureBlob1')]"
@@ -1086,8 +862,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -1095,10 +869,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline324')]",
@@ -1110,8 +882,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 100
 						}
@@ -1119,10 +889,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline325')]",
@@ -1133,8 +901,6 @@
 					{
 						"name": "Wait144",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -1142,10 +908,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline326')]",
@@ -1156,8 +920,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 1
 						}
@@ -1165,10 +927,8 @@
 				],
 				"folder": {
 					"name": "Pipelines222"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline4')]",
@@ -1179,8 +939,6 @@
 					{
 						"name": "Wait1",
 						"type": "Wait",
-						"dependsOn": [],
-						"userProperties": [],
 						"typeProperties": {
 							"waitTimeInSeconds": 100
 						}
@@ -1188,10 +946,8 @@
 				],
 				"folder": {
 					"name": "Pipelines12"
-				},
-				"annotations": []
-			},
-			"dependsOn": []
+				}
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureBlob1')]",
@@ -1202,7 +958,6 @@
 					"referenceName": "AzureBlobStorage1",
 					"type": "LinkedServiceReference"
 				},
-				"annotations": [],
 				"type": "AzureBlob",
 				"structure": [
 					{
@@ -1219,13 +974,10 @@
 						"skipLineCount": 0,
 						"firstRowAsHeader": false
 					},
-					"fileName": "[parameters('AzureBlob1_properties_typeProperties_fileName')]",
-					"folderPath": "[parameters('AzureBlob1_properties_typeProperties_folderPath')]"
+					"fileName": "MACommand32417a82-3a6f-4479-bd4d-6145028410eb.xml",
+					"folderPath": "mamsasstore/RomeAsm5006f209224542ee83"
 				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
-			]
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureBlob2')]",
@@ -1236,7 +988,6 @@
 					"referenceName": "AzureBlobStorage1",
 					"type": "LinkedServiceReference"
 				},
-				"annotations": [],
 				"type": "AzureBlob",
 				"typeProperties": {
 					"format": {
@@ -1249,10 +1000,7 @@
 						"firstRowAsHeader": false
 					}
 				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
-			]
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureTable1')]",
@@ -1263,7 +1011,6 @@
 					"referenceName": "AzureTableStorage1",
 					"type": "LinkedServiceReference"
 				},
-				"annotations": [],
 				"type": "AzureTable",
 				"structure": [
 					{
@@ -1274,10 +1021,7 @@
 				"typeProperties": {
 					"tableName": "annotationevents"
 				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureTableStorage1')]"
-			]
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/layer3_s3_aws_account')]",
@@ -1288,7 +1032,6 @@
 					"referenceName": "layer3_s3_aws",
 					"type": "LinkedServiceReference"
 				},
-				"annotations": [],
 				"type": "AmazonS3Object",
 				"structure": [
 					{
@@ -1386,59 +1129,15 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage2')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorage2_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStore1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureDataLakeStore",
-				"typeProperties": {
-					"dataLakeStoreUri": "[parameters('AzureDataLakeStore1_properties_typeProperties_dataLakeStoreUri')]",
-					"tenant": "[parameters('AzureDataLakeStore1_properties_typeProperties_tenant')]",
-					"subscriptionId": "[parameters('AzureDataLakeStore1_properties_typeProperties_subscriptionId')]",
-					"resourceGroupName": "[parameters('AzureDataLakeStore1_properties_typeProperties_resourceGroupName')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/AzureKeyVault1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					"baseUrl": "https://arsundaKV.vault.azure.net/"
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureKeyVault2')]",
@@ -1446,92 +1145,11 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"description": "e",
-				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "[parameters('AzureKeyVault2_properties_typeProperties_baseUrl')]"
+					"baseUrl": "https://ADFBillingTest.vault.azure.net/"
 				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlDW1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDW",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureSqlDW1_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureTableStorage1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureTableStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureTableStorage1_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/CosmosDb1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "A",
-				"annotations": [],
-				"type": "CosmosDb",
-				"typeProperties": {
-					"connectionString": "[parameters('CosmosDb1_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SqlServer1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('SqlServer1_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SqlServer2')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('SqlServer2_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SqlServer3')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('SqlServer3_connectionString')]"
-				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/adobeload_blobstore_azure')]",
@@ -1539,7 +1157,6 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"description": "Linked service for blob storage account where adobe loads the Clickssstream data",
-				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": {
@@ -1548,7 +1165,7 @@
 							"referenceName": "razr_keyvault",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "[parameters('adobeload_blobstore_azure_properties_typeProperties_connectionString_secretName')]"
+						"secretName": "dev-adobeloadblob-connectionstring"
 					}
 				}
 			},
@@ -1562,10 +1179,9 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"description": "Batch Service for accessing datasets mounted on blob storage account where Adobe loads the Clickstream data",
-				"annotations": [],
 				"type": "AzureBatch",
 				"typeProperties": {
-					"accountName": "[parameters('batchadobeload_batchservice_azure_properties_typeProperties_accountName')]",
+					"accountName": "devrzrimpwu2batch0",
 					"accessKey": {
 						"type": "AzureKeyVaultSecret",
 						"store": {
@@ -1593,7 +1209,6 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"description": "SFTP connection to Blue core partner ",
-				"annotations": [],
 				"type": "Sftp",
 				"typeProperties": {
 					"host": "triggermail.exavault.com",
@@ -1601,7 +1216,7 @@
 					"skipHostKeyValidation": false,
 					"hostKeyFingerprint": "ssh-rsa 2048 0e:ce:3e:a2:be:7e:45:1f:0b:dd:c5:41:e0:96:c9:b7",
 					"authenticationType": "Basic",
-					"userName": "[parameters('bluecore449_fs_sftp_properties_typeProperties_userName')]",
+					"userName": "ssimax_tmobile",
 					"password": {
 						"type": "AzureKeyVaultSecret",
 						"store": {
@@ -1622,10 +1237,9 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"description": "AWS S3 bucket for Layer3 data",
-				"annotations": [],
 				"type": "AmazonS3",
 				"typeProperties": {
-					"accessKeyId": "[parameters('layer3_s3_aws_properties_typeProperties_accessKeyId')]",
+					"accessKeyId": "AKIAI466LBKQQGAT4WWQ",
 					"secretAccessKey": {
 						"type": "AzureKeyVaultSecret",
 						"store": {
@@ -1646,13 +1260,11 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"description": "This service will help retrieve passwords for different source-destinations automatically rather than saving it manually in each connection",
-				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "[parameters('razr_keyvault_properties_typeProperties_baseUrl')]"
+					"baseUrl": "https://prdrzrsecwu2-vault0.vault.azure.net/"
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AS')]",
@@ -1666,7 +1278,6 @@
 					"32123223231231231231233123123123123123123"
 				],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -1676,17 +1287,14 @@
 						"timeZone": "UTC"
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DE')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -1696,17 +1304,14 @@
 						"timeZone": "UTC"
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DE_GIT2')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -1716,8 +1321,7 @@
 						"timeZone": "UTC"
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Daily_0433_PST to 1933_PST')]",
@@ -1725,9 +1329,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"description": "Daily Trigger for 4:33 AM Pacific Time by the hour to 7:33 pm",
-				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -1760,8 +1362,7 @@
 						}
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Daily_0503_PST')]",
@@ -1769,9 +1370,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"description": "Daily Trigger for 5:03 AM Pacific Time",
-				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -1789,15 +1388,13 @@
 						}
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/OldDate')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"runtimeState": "Stopped",
 				"type": "TumblingWindowTrigger",
 				"typeProperties": {
@@ -1810,23 +1407,20 @@
 						"intervalInSeconds": 30
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/T1')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"runtimeState": "Started",
 				"pipelines": [
 					{
 						"pipelineReference": {
 							"referenceName": "C0",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1848,15 +1442,13 @@
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"runtimeState": "Stopped",
 				"pipelines": [
 					{
 						"pipelineReference": {
 							"referenceName": "P4",
 							"type": "PipelineReference"
-						},
-						"parameters": {}
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -1878,14 +1470,12 @@
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"runtimeState": "Stopped",
 				"pipeline": {
 					"pipelineReference": {
 						"referenceName": "pipeline1",
 						"type": "PipelineReference"
-					},
-					"parameters": {}
+					}
 				},
 				"type": "TumblingWindowTrigger",
 				"typeProperties": {
@@ -1908,9 +1498,7 @@
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -1928,8 +1516,7 @@
 						}
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Trigger_0105_Daily')]",
@@ -1937,9 +1524,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"description": "Runs loads after daily 0100 trigger",
-				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -1957,17 +1542,14 @@
 						}
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/XWZ')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -1977,8 +1559,7 @@
 						"timeZone": "UTC"
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/trigger145454545445')]",
@@ -1986,9 +1567,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"description": "sdaasdasdasd",
-				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -1998,17 +1577,14 @@
 						"timeZone": "UTC"
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/trigger145454545446')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -2018,17 +1594,14 @@
 						"timeZone": "UTC"
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/trigger145454545447')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -2038,17 +1611,14 @@
 						"timeZone": "UTC"
 					}
 				}
-			},
-			"dependsOn": []
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/trigger145454545448')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -2058,18 +1628,7 @@
 						"timeZone": "UTC"
 					}
 				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/', parameters('integrationRuntime_integrationRuntime1'))]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
-			},
-			"dependsOn": []
+			}
 		}
 	]
 }
