@@ -1,0 +1,39 @@
+{
+	"name": "Daily_0433_PST to 1933_PST",
+	"properties": {
+		"description": "Daily Trigger for 4:33 AM Pacific Time by the hour to 7:33 pm",
+		"runtimeState": "Stopped",
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2018-08-03T21:45:45.483Z",
+				"timeZone": "UTC",
+				"schedule": {
+					"minutes": [
+						33
+					],
+					"hours": [
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						0,
+						1,
+						2
+					]
+				}
+			}
+		}
+	}
+}

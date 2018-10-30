@@ -1,6 +1,7 @@
 {
 	"name": "pipeline1",
 	"properties": {
+		"description": "h",
 		"activities": [
 			{
 				"name": "Wait1New",
@@ -79,6 +80,9 @@
 				"type": "Int",
 				"defaultValue": 2
 			}
+		},
+		"folder": {
+			"name": "Pipelines222"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"

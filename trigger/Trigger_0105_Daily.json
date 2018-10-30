@@ -1,0 +1,24 @@
+{
+	"name": "Trigger_0105_Daily",
+	"properties": {
+		"description": "Runs loads after daily 0100 trigger",
+		"runtimeState": "Stopped",
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2018-07-26T01:03:00Z",
+				"timeZone": "UTC",
+				"schedule": {
+					"minutes": [
+						5
+					],
+					"hours": [
+						1
+					]
+				}
+			}
+		}
+	}
+}

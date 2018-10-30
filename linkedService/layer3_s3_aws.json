@@ -1,0 +1,19 @@
+{
+	"name": "layer3_s3_aws",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "AWS S3 bucket for Layer3 data",
+		"type": "AmazonS3",
+		"typeProperties": {
+			"accessKeyId": "AKIAI466LBKQQGAT4WWQ",
+			"secretAccessKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "razr_keyvault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "aws-layer3tvprod-accesskey"
+			}
+		}
+	}
+}

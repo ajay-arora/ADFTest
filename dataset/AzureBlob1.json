@@ -6,16 +6,23 @@
 			"type": "LinkedServiceReference"
 		},
 		"type": "AzureBlob",
+		"structure": [
+			{
+				"name": "Prop_0",
+				"type": "String"
+			}
+		],
 		"typeProperties": {
 			"format": {
 				"type": "TextFormat",
 				"columnDelimiter": ",",
-				"rowDelimiter": "",
 				"nullValue": "\\N",
 				"treatEmptyAsNull": true,
 				"skipLineCount": 0,
 				"firstRowAsHeader": false
-			}
+			},
+			"fileName": "MACommand32417a82-3a6f-4479-bd4d-6145028410eb.xml",
+			"folderPath": "mamsasstore/RomeAsm5006f209224542ee83"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

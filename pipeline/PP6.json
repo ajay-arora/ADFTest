@@ -1,13 +1,12 @@
 {
-	"name": "pipeline324",
+	"name": "PP6",
 	"properties": {
-		"description": "joio",
 		"activities": [
 			{
 				"name": "Wait1",
 				"type": "Wait",
 				"typeProperties": {
-					"waitTimeInSeconds": 100
+					"waitTimeInSeconds": 1
 				}
 			}
 		],

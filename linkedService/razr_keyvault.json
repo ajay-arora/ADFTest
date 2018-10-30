@@ -1,0 +1,11 @@
+{
+	"name": "razr_keyvault",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "This service will help retrieve passwords for different source-destinations automatically rather than saving it manually in each connection",
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://prdrzrsecwu2-vault0.vault.azure.net/"
+		}
+	}
+}

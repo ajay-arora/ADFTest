@@ -6,8 +6,14 @@
 			"type": "LinkedServiceReference"
 		},
 		"type": "AzureTable",
+		"structure": [
+			{
+				"name": "12",
+				"type": "Boolean"
+			}
+		],
 		"typeProperties": {
-			"tableName": "RomeAsm5006f209224542ee83ExtensionLogEventVer1v020170321"
+			"tableName": "annotationevents"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

@@ -1,19 +1,15 @@
 {
-	"name": "pipeline324",
+	"name": "pipel27h624",
 	"properties": {
-		"description": "joio",
 		"activities": [
 			{
 				"name": "Wait1",
 				"type": "Wait",
 				"typeProperties": {
-					"waitTimeInSeconds": 100
+					"waitTimeInSeconds": 1
 				}
 			}
-		],
-		"folder": {
-			"name": "Pipelines12"
-		}
+		]
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

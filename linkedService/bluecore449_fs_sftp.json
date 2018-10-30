@@ -1,0 +1,24 @@
+{
+	"name": "bluecore449_fs_sftp",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "SFTP connection to Blue core partner ",
+		"type": "Sftp",
+		"typeProperties": {
+			"host": "triggermail.exavault.com",
+			"port": 22,
+			"skipHostKeyValidation": false,
+			"hostKeyFingerprint": "ssh-rsa 2048 0e:ce:3e:a2:be:7e:45:1f:0b:dd:c5:41:e0:96:c9:b7",
+			"authenticationType": "Basic",
+			"userName": "ssimax_tmobile",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "razr_keyvault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sftp-bluecore-password"
+			}
+		}
+	}
+}

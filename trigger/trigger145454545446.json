@@ -1,19 +1,13 @@
 {
-	"name": "AS",
+	"name": "trigger145454545446",
 	"properties": {
-		"annotations": [
-			"ASD",
-			"123",
-			"32123",
-			"32123223231231231231233123123123123123123"
-		],
 		"runtimeState": "Stopped",
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
 				"frequency": "Minute",
 				"interval": 1,
-				"startTime": "2018-09-24T22:39:49.28Z",
+				"startTime": "2018-10-22T22:30:00Z",
 				"timeZone": "UTC"
 			}
 		}
