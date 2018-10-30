@@ -1,6 +1,7 @@
 {
 	"name": "P261333477",
 	"properties": {
+		"description": "2",
 		"activities": [
 			{
 				"name": "Wait1",
