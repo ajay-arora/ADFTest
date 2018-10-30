@@ -1,0 +1,106 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory Name",
+			"defaultValue": "Ajay-ADF"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "hsds",
+				"activities": [
+					{
+						"name": "Wait1New",
+						"description": "Some wait description",
+						"type": "Wait",
+						"userProperties": [
+							{
+								"name": "Some user property name",
+								"value": "some user property value"
+							}
+						],
+						"typeProperties": {
+							"waitTimeInSeconds": 40
+						}
+					},
+					{
+						"name": "Wait23334",
+						"type": "Wait",
+						"dependsOn": [
+							{
+								"activity": "Wait1New",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [
+							{
+								"name": "3",
+								"value": "3"
+							}
+						],
+						"typeProperties": {
+							"waitTimeInSeconds": 30
+						}
+					},
+					{
+						"name": "Wait3InMaster",
+						"type": "Wait",
+						"dependsOn": [
+							{
+								"activity": "Wait1New",
+								"dependencyConditions": [
+									"Completed"
+								]
+							}
+						],
+						"typeProperties": {
+							"waitTimeInSeconds": 10
+						}
+					},
+					{
+						"name": "Get Metadata1",
+						"type": "GetMetadata",
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "AzureBlob1",
+								"type": "DatasetReference"
+							}
+						}
+					}
+				],
+				"parameters": {
+					"Param1": {
+						"type": "String",
+						"defaultValue": "Value1"
+					},
+					"Parm2": {
+						"type": "Int",
+						"defaultValue": 2
+					}
+				},
+				"folder": {
+					"name": "Pipelines222"
+				}
+			}
+		}
+	]
+}
