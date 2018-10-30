@@ -106,7 +106,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"description": "2",
+				"description": "2dd",
 				"activities": [
 					{
 						"name": "Wait1",
