@@ -12,6 +12,11 @@
 			"metadata": "Integration Runtime Name",
 			"defaultValue": "integrationRuntime1"
 		},
+		"integrationRuntime_integrationRuntime2": {
+			"type": "string",
+			"metadata": "Integration Runtime Name",
+			"defaultValue": "integrationRuntime2"
+		},
 		"AzureBlob1_properties_typeProperties_fileName": {
 			"type": "string",
 			"defaultValue": "MACommand32417a82-3a6f-4479-bd4d-6145028410eb.xml"
@@ -19,10 +24,6 @@
 		"AzureBlob1_properties_typeProperties_folderPath": {
 			"type": "string",
 			"defaultValue": "mamsasstore/RomeAsm5006f209224542ee83"
-		},
-		"adobeload_blobstore_azure_properties_typeProperties_connectionString_secretName": {
-			"type": "string",
-			"defaultValue": "dev-adobeloadblob-connectionstring"
 		}
 	},
 	"variables": {
@@ -357,6 +358,16 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/', parameters('integrationRuntime_integrationRuntime2'))]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/P4')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -515,27 +526,6 @@
 				],
 				"typeProperties": {
 					"tableName": "annotationevents"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/adobeload_blobstore_azure')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Linked service for blob storage account where adobe loads the Clickssstream data",
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": {
-						"type": "AzureKeyVaultSecret",
-						"store": {
-							"referenceName": "razr_keyvault",
-							"type": "LinkedServiceReference"
-						},
-						"secretName": "[parameters('adobeload_blobstore_azure_properties_typeProperties_connectionString_secretName')]"
-					}
 				}
 			},
 			"dependsOn": []

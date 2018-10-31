@@ -8,6 +8,9 @@
 		"integrationRuntime_integrationRuntime1": {
 			"value": "integrationRuntime1"
 		},
+		"integrationRuntime_integrationRuntime2": {
+			"value": "integrationRuntime2"
+		},
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},

@@ -12,6 +12,11 @@
 			"metadata": "Integration Runtime Name",
 			"defaultValue": "integrationRuntime1"
 		},
+		"integrationRuntime_integrationRuntime2": {
+			"type": "string",
+			"metadata": "Integration Runtime Name",
+			"defaultValue": "integrationRuntime2"
+		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
@@ -209,14 +214,14 @@
 					"integrationRuntime_integrationRuntime1": {
 						"value": "[parameters('integrationRuntime_integrationRuntime1')]"
 					},
+					"integrationRuntime_integrationRuntime2": {
+						"value": "[parameters('integrationRuntime_integrationRuntime2')]"
+					},
 					"AzureBlob1_properties_typeProperties_fileName": {
 						"value": "[parameters('AzureBlob1_properties_typeProperties_fileName')]"
 					},
 					"AzureBlob1_properties_typeProperties_folderPath": {
 						"value": "[parameters('AzureBlob1_properties_typeProperties_folderPath')]"
-					},
-					"adobeload_blobstore_azure_properties_typeProperties_connectionString_secretName": {
-						"value": "[parameters('adobeload_blobstore_azure_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
@@ -237,6 +242,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"adobeload_blobstore_azure_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('adobeload_blobstore_azure_properties_typeProperties_connectionString_secretName')]"
 					},
 					"bluecore449_fs_sftp_properties_typeProperties_userName": {
 						"value": "[parameters('bluecore449_fs_sftp_properties_typeProperties_userName')]"
