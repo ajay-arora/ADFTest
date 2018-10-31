@@ -1,6 +1,7 @@
 {
 	"name": "C0",
 	"properties": {
+		"description": "cxv",
 		"activities": [
 			{
 				"name": "Wait1",
