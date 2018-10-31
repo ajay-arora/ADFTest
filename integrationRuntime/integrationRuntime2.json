@@ -1,0 +1,12 @@
+{
+	"name": "integrationRuntime2",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/066afed5-1b18-4d69-9a19-3027c8a4a86d/resourcegroups/AjayRG/providers/Microsoft.DataFactory/factories/Ajay-ADF/integrationruntimes/integrationRuntime2",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}
