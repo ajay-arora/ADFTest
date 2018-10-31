@@ -1,0 +1,101 @@
+{
+	"name": "layer3_s3_aws_account",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "layer3_s3_aws",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AmazonS3Object",
+		"structure": [
+			{
+				"name": "_id",
+				"type": "String"
+			},
+			{
+				"name": "status",
+				"type": "String"
+			},
+			{
+				"name": "created",
+				"type": "String"
+			},
+			{
+				"name": "lineup",
+				"type": "String"
+			},
+			{
+				"name": "category",
+				"type": "String"
+			},
+			{
+				"name": "originator.trackingcode",
+				"type": "String"
+			},
+			{
+				"name": "originator.type",
+				"type": "String"
+			},
+			{
+				"name": "brand",
+				"type": "String"
+			},
+			{
+				"name": "offer",
+				"type": "String"
+			},
+			{
+				"name": "type",
+				"type": "String"
+			},
+			{
+				"name": "dma",
+				"type": "String"
+			},
+			{
+				"name": "subscription.plan.id",
+				"type": "String"
+			},
+			{
+				"name": "billing_start",
+				"type": "String"
+			},
+			{
+				"name": "last_disconnect",
+				"type": "String"
+			},
+			{
+				"name": "tags",
+				"type": "String"
+			},
+			{
+				"name": "isp",
+				"type": "String"
+			},
+			{
+				"name": "scheduled_billing_start",
+				"type": "String"
+			},
+			{
+				"name": "group",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "\n",
+				"quoteChar": "\"",
+				"nullValue": "\\N",
+				"encodingName": null,
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": true
+			},
+			"key": "mongo/acme/acme_accounts.csv",
+			"prefix": "",
+			"bucketName": "layer3tv-prod-domo"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

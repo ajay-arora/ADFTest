@@ -1,0 +1,25 @@
+{
+	"name": "batchadobeload_batchservice_azure",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Batch Service for accessing datasets mounted on blob storage account where Adobe loads the Clickstream data",
+		"type": "AzureBatch",
+		"typeProperties": {
+			"accountName": "devrzrimpwu2batch0",
+			"accessKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "razr_keyvault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "dev-batchservice-accesskey"
+			},
+			"batchUri": "https://devrzrimpwu2batch0.westus2.batch.azure.com",
+			"poolName": "devrzrimpwu2batch0-pool0",
+			"linkedServiceName": {
+				"referenceName": "adobeload_blobstore_azure",
+				"type": "LinkedServiceReference"
+			}
+		}
+	}
+}

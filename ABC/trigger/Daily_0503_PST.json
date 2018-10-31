@@ -1,0 +1,24 @@
+{
+	"name": "Daily_0503_PST",
+	"properties": {
+		"description": "Daily Trigger for 5:03 AM Pacific Time",
+		"runtimeState": "Stopped",
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2018-08-03T21:42:05.747Z",
+				"timeZone": "UTC",
+				"schedule": {
+					"minutes": [
+						3
+					],
+					"hours": [
+						12
+					]
+				}
+			}
+		}
+	}
+}

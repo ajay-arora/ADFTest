@@ -1,0 +1,20 @@
+{
+	"name": "AzureTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureTableStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureTable",
+		"structure": [
+			{
+				"name": "12",
+				"type": "Boolean"
+			}
+		],
+		"typeProperties": {
+			"tableName": "annotationevents"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
