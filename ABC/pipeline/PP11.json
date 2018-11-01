@@ -10,13 +10,6 @@
 				}
 			},
 			{
-				"name": "Wait1",
-				"type": "Wait",
-				"typeProperties": {
-					"waitTimeInSeconds": 1
-				}
-			},
-			{
 				"name": "Execute Pipeline1",
 				"type": "ExecutePipeline",
 				"typeProperties": {
