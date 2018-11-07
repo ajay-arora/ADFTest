@@ -1,6 +1,7 @@
 {
 	"name": "P3",
 	"properties": {
+		"description": "s",
 		"activities": [
 			{
 				"name": "Wait1",
