@@ -1,7 +1,7 @@
 {
 	"name": "pipeline324",
 	"properties": {
-		"description": "joio",
+		"description": "joiosdasd",
 		"activities": [
 			{
 				"name": "Wait1",
