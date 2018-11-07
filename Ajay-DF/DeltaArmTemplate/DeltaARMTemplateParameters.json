@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "Ajay-DF"
 		},
+		"integrationRuntime_integrationRuntime1": {
+			"value": "integrationRuntime1"
+		},
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
@@ -16,6 +19,15 @@
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://arsundaKV.vault.azure.net/"
+		},
+		"', parameters('integrationRuntime_integrationRuntime1'_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"value": "deata.database.windows.net"
+		},
+		"', parameters('integrationRuntime_integrationRuntime1'_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"value": "adminDino"
+		},
+		"', parameters('integrationRuntime_integrationRuntime1'_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"value": ""
 		}
 	}
 }
