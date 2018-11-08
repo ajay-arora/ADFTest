@@ -1,6 +1,7 @@
 {
 	"name": "AzureBlob2",
 	"properties": {
+		"description": "dasdasd",
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
