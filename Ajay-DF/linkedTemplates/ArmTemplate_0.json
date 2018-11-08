@@ -69,7 +69,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
-				"description": "s",
+				"description": "ssdsd",
 				"activities": [
 					{
 						"name": "Wait1",
@@ -111,7 +111,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
-				"description": "joio",
+				"description": "joiosdasd",
 				"activities": [
 					{
 						"name": "Wait1",
