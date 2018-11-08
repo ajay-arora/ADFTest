@@ -69,7 +69,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
-				"description": "ssdsd",
+				"description": "s",
 				"activities": [
 					{
 						"name": "Wait1",
@@ -77,7 +77,7 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": 1
+							"waitTimeInSeconds": 20
 						}
 					}
 				],
@@ -125,6 +125,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
+				"description": "dsd",
 				"activities": [
 					{
 						"name": "Wait1New",
@@ -290,7 +291,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
-				"description": "joiosdasd",
+				"description": "joiosdasdadasd",
 				"activities": [
 					{
 						"name": "Wait1",
@@ -378,6 +379,7 @@
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
+				"description": "dasdasd",
 				"linkedServiceName": {
 					"referenceName": "AzureBlobStorage1",
 					"type": "LinkedServiceReference"
