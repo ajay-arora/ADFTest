@@ -1,13 +1,13 @@
 {
 	"name": "P3",
 	"properties": {
-		"description": "ssdsd",
+		"description": "s",
 		"activities": [
 			{
 				"name": "Wait1",
 				"type": "Wait",
 				"typeProperties": {
-					"waitTimeInSeconds": 1
+					"waitTimeInSeconds": 20
 				}
 			}
 		]
