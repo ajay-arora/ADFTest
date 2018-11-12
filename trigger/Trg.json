@@ -10,6 +10,12 @@
 				"startTime": "2018-11-12T22:23:00.000Z",
 				"timeZone": "UTC",
 				"schedule": {
+					"minutes": [
+						0
+					],
+					"hours": [
+						0
+					],
 					"weekDays": [
 						"Sunday"
 					]
