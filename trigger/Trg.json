@@ -1,7 +1,7 @@
 {
 	"name": "Trg",
 	"properties": {
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
