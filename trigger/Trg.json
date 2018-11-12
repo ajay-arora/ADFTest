@@ -1,6 +1,7 @@
 {
 	"name": "Trg",
 	"properties": {
+		"description": "sdasd",
 		"runtimeState": "Started",
 		"pipelines": [
 			{
