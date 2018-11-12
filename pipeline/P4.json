@@ -19,13 +19,6 @@
 						"type": "PipelineReference"
 					}
 				}
-			},
-			{
-				"name": "ForEach1",
-				"type": "ForEach",
-				"typeProperties": {
-					"batchCount": 8
-				}
 			}
 		]
 	},
