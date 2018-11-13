@@ -28,15 +28,15 @@
 			"type": "string",
 			"defaultValue": "https://arsundaKV.vault.azure.net/"
 		},
-		"', parameters('integrationRuntime_integrationRuntime1'_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
 			"type": "string",
 			"defaultValue": "deata.database.windows.net"
 		},
-		"', parameters('integrationRuntime_integrationRuntime1'_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
 			"type": "string",
 			"defaultValue": "adminDino"
 		},
-		"', parameters('integrationRuntime_integrationRuntime1'_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
 			"type": "secureString"
 		}
 	},
@@ -60,6 +60,9 @@
 						}
 					}
 				],
+				"folder": {
+					"name": "ABC"
+				},
 				"annotations": []
 			},
 			"dependsOn": []
@@ -69,7 +72,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
-				"description": "ssdsd",
+				"description": "s",
 				"activities": [
 					{
 						"name": "Wait1",
@@ -77,7 +80,7 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": 1
+							"waitTimeInSeconds": 10
 						}
 					}
 				],
@@ -102,6 +105,9 @@
 						}
 					}
 				],
+				"folder": {
+					"name": "ABC"
+				},
 				"annotations": []
 			},
 			"dependsOn": []
@@ -111,7 +117,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
-				"description": "joiosdasd",
+				"description": "joiosdasdadasd",
 				"activities": [
 					{
 						"name": "Wait1",
@@ -123,6 +129,9 @@
 						}
 					}
 				],
+				"folder": {
+					"name": "ABC"
+				},
 				"annotations": []
 			},
 			"dependsOn": []
@@ -143,6 +152,9 @@
 						}
 					}
 				],
+				"folder": {
+					"name": "ABC"
+				},
 				"annotations": []
 			},
 			"dependsOn": []
@@ -163,6 +175,9 @@
 						}
 					}
 				],
+				"folder": {
+					"name": "ABC"
+				},
 				"annotations": []
 			},
 			"dependsOn": []
@@ -172,6 +187,7 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
+				"description": "d",
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
@@ -335,11 +351,11 @@
 					},
 					"ssisProperties": {
 						"catalogInfo": {
-							"catalogServerEndpoint": "[parameters('', parameters('integrationRuntime_integrationRuntime1'_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]",
-							"catalogAdminUserName": "[parameters('', parameters('integrationRuntime_integrationRuntime1'_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]",
+							"catalogServerEndpoint": "[parameters('integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]",
+							"catalogAdminUserName": "[parameters('integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]",
 							"catalogAdminPassword": {
 								"type": "SecureString",
-								"value": "[parameters('', parameters('integrationRuntime_integrationRuntime1'_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
+								"value": "[parameters('integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
 							},
 							"catalogPricingTier": "Basic"
 						},
@@ -417,6 +433,7 @@
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
+				"description": "dasdasd",
 				"linkedServiceName": {
 					"referenceName": "AzureBlobStorage1",
 					"type": "LinkedServiceReference"
