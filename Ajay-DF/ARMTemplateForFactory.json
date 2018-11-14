@@ -128,7 +128,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
-				"description": "dsd2ssdvfcsf1",
+				"description": "dsd2ssdvfcsf0s1s",
 				"activities": [
 					{
 						"name": "Wait1New",
