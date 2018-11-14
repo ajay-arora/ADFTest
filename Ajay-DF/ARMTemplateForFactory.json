@@ -72,7 +72,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
-				"description": "s",
+				"description": "ss",
 				"activities": [
 					{
 						"name": "Wait1",
