@@ -45,7 +45,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-07-01-preview",
 			"properties": {
-				"description": "sdasdssh",
+				"description": "sdasdsshd",
 				"activities": [
 					{
 						"name": "Wait1New",
