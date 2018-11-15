@@ -1,0 +1,43 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory Name",
+			"defaultValue": "Ajay-DF"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/P4')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-07-01-preview",
+			"properties": {
+				"description": "DEFGsfhd",
+				"activities": [
+					{
+						"name": "Wait1",
+						"type": "Wait",
+						"typeProperties": {
+							"waitTimeInSeconds": 1
+						}
+					},
+					{
+						"name": "Execute Pipeline1",
+						"type": "ExecutePipeline",
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "C0",
+								"type": "PipelineReference"
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}
