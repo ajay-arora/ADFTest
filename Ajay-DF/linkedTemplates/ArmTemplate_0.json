@@ -23,21 +23,6 @@
 		"AzureTableStorage1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureTableStorage1'"
-		},
-		"AzureKeyVault1_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://arsundaKV.vault.azure.net/"
-		},
-		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
-			"type": "string",
-			"defaultValue": "deata.database.windows.net"
-		},
-		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
-			"type": "string",
-			"defaultValue": "adminDino"
-		},
-		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
-			"type": "secureString"
 		}
 	},
 	"variables": {
@@ -191,7 +176,10 @@
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
+					"connectionString": {
+						"type": "SecureString",
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					}
 				}
 			},
 			"dependsOn": []
@@ -204,7 +192,10 @@
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorage2_connectionString')]"
+					"connectionString": {
+						"type": "SecureString",
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					}
 				}
 			},
 			"dependsOn": []
@@ -217,7 +208,7 @@
 				"annotations": [],
 				"type": "AzureKeyVault",
 				"typeProperties": {
-					"baseUrl": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					"baseUrl": "https://arsundaKV.vault.azure.net/"
 				}
 			},
 			"dependsOn": []
@@ -230,7 +221,10 @@
 				"annotations": [],
 				"type": "AzureTableStorage",
 				"typeProperties": {
-					"connectionString": "[parameters('AzureTableStorage1_connectionString')]"
+					"connectionString": {
+						"type": "SecureString",
+						"value": "[parameters('AzureTableStorage1_connectionString')]"
+					}
 				}
 			},
 			"dependsOn": []
@@ -351,11 +345,11 @@
 					},
 					"ssisProperties": {
 						"catalogInfo": {
-							"catalogServerEndpoint": "[parameters('integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]",
-							"catalogAdminUserName": "[parameters('integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]",
+							"catalogServerEndpoint": "deata.database.windows.net",
+							"catalogAdminUserName": "adminDino",
 							"catalogAdminPassword": {
 								"type": "SecureString",
-								"value": "[parameters('integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
+								"value": "**********"
 							},
 							"catalogPricingTier": "Basic"
 						},
