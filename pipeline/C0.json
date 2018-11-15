@@ -9,6 +9,16 @@
 				"typeProperties": {
 					"waitTimeInSeconds": 1
 				}
+			},
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "P4",
+						"type": "PipelineReference"
+					}
+				}
 			}
 		],
 		"folder": {
