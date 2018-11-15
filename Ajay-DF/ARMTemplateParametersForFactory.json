@@ -17,6 +17,18 @@
 		"AzureTableStorage1_connectionString": {
 			"value": ""
 		},
+		"AzureBlob1_properties_typeProperties_fileName": {
+			"value": ""
+		},
+		"AzureBlob1_properties_typeProperties_folderPath": {
+			"value": "mamsasstoreromeasm8ff5ac0090464a548b"
+		},
+		"AzureBlob2_properties_typeProperties_fileName": {
+			"value": ""
+		},
+		"AzureBlob2_properties_typeProperties_folderPath": {
+			"value": "romeasm5006f209224542ee83asmbaselinever1v0"
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://arsundaKV.vault.azure.net/"
 		},

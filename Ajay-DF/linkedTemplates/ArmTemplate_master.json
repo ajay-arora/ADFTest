@@ -24,6 +24,22 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureTableStorage1'"
 		},
+		"AzureBlob1_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": ""
+		},
+		"AzureBlob1_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "mamsasstoreromeasm8ff5ac0090464a548b"
+		},
+		"AzureBlob2_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": ""
+		},
+		"AzureBlob2_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "romeasm5006f209224542ee83asmbaselinever1v0"
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://arsundaKV.vault.azure.net/"
@@ -107,6 +123,12 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlob1_properties_typeProperties_fileName": {
+						"value": "[parameters('AzureBlob1_properties_typeProperties_fileName')]"
+					},
+					"AzureBlob1_properties_typeProperties_folderPath": {
+						"value": "[parameters('AzureBlob1_properties_typeProperties_folderPath')]"
 					}
 				}
 			},
@@ -127,11 +149,57 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlob2_properties_typeProperties_fileName": {
+						"value": "[parameters('AzureBlob2_properties_typeProperties_fileName')]"
+					},
+					"AzureBlob2_properties_typeProperties_folderPath": {
+						"value": "[parameters('AzureBlob2_properties_typeProperties_folderPath')]"
 					}
 				}
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_3')]"
 			]
 		}
 	]
