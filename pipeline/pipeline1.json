@@ -1,7 +1,7 @@
 {
 	"name": "pipeline1",
 	"properties": {
-		"description": "dsds2sdvffsssd",
+		"description": "dsds2sdvffsssdd",
 		"activities": [
 			{
 				"name": "Wait1New",
