@@ -14,7 +14,9 @@
 		"parameters": {
 			"pa": {
 				"type": "Object",
-				"defaultValue": "{\"a\";\"b\",\"items\":[]}"
+				"defaultValue": {
+					"a": "b"
+				}
 			}
 		}
 	},
