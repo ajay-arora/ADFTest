@@ -70,17 +70,7 @@
 					}
 				}
 			}
-		],
-		"parameters": {
-			"Param1": {
-				"type": "String",
-				"defaultValue": "Value1"
-			},
-			"Parm2": {
-				"type": "Int",
-				"defaultValue": 2
-			}
-		}
+		]
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
