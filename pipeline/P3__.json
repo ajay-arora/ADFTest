@@ -1,5 +1,5 @@
 {
-	"name": "P3_",
+	"name": "P3__",
 	"properties": {
 		"description": "ssss",
 		"activities": [
@@ -15,8 +15,7 @@
 			"pa": {
 				"type": "Object",
 				"defaultValue": {
-					"a": "b",
-					"items":[]
+					"a": "b"
 				}
 			}
 		}
