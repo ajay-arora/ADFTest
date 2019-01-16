@@ -10,7 +10,12 @@
 					"waitTimeInSeconds": 1
 				}
 			}
-		]
+		],
+		"parameters": {
+			"pa": {
+				"type": "SecureString"
+			}
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
