@@ -13,7 +13,7 @@
 		],
 		"parameters": {
 			"pa": {
-				"type": "SecureString"
+				"type": "Object"
 			}
 		}
 	},
