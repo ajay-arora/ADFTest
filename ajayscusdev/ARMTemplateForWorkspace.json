@@ -6,6 +6,9 @@
 			"type": "string",
 			"metadata": "Workspace name",
 			"defaultValue": "ajayscusdev"
+		},
+		"IntegrationRuntime1_properties_typeProperties_computeProperties_dataFlowProperties_0": {
+			"type": "secureString"
 		}
 	},
 	"variables": {
@@ -55,6 +58,56 @@
 					"elapsedTimeMetric": {}
 				},
 				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/IntegrationRuntime1')]",
+			"type": "Microsoft.Synapse/workspaces/integrationRuntimes",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "South Central US",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 16,
+							"timeToLive": 0,
+							"externalComputeInfo": [
+								{
+									"type": "AzureDatabricks",
+									"endpoint": "https://yourdatabricks.azuredatabricks.net",
+									"workspaceId": "ssd",
+									"accessToken": {
+										"type": "SecureString",
+										"value": "[parameters('IntegrationRuntime1_properties_typeProperties_computeProperties_dataFlowProperties_0')]"
+									}
+								}
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/Trigger 1')]",
+			"type": "Microsoft.Synapse/workspaces/triggers",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 15,
+						"startTime": "2020-11-02T21:53:00Z",
+						"timeZone": "UTC"
+					}
+				}
 			},
 			"dependsOn": []
 		}

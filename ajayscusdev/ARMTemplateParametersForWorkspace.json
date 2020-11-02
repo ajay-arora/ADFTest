@@ -4,6 +4,9 @@
 	"parameters": {
 		"workspaceName": {
 			"value": "ajayscusdev"
+		},
+		"IntegrationRuntime1_properties_typeProperties_computeProperties_dataFlowProperties_0": {
+			"value": ""
 		}
 	}
 }
