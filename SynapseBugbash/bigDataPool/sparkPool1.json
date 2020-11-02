@@ -1,6 +1,9 @@
 {
 	"name": "sparkPool1",
 	"location": "southcentralus",
+	"tags": {
+		"12": "22"
+	},
 	"properties": {
 		"autoPause": {
 			"enabled": true,
