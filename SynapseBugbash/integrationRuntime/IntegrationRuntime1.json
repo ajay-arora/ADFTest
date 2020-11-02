@@ -12,7 +12,7 @@
 					"externalComputeInfo": [
 						{
 							"type": "AzureDatabricks",
-							"endpoint": "https://yourdatabricks.azuredatabricks.net",
+							"endpoint": "https://yourdatffgabricks.azuredatabricks.net",
 							"workspaceId": "ssd",
 							"accessToken": {
 								"type": "SecureString",
