@@ -1,0 +1,11 @@
+{
+	"name": "ajaycanarydev-WorkspaceDefaultStorage",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"typeProperties": {
+			"url": "https://ajaywsgen2.dfs.core.windows.net"
+		},
+		"type": "AzureBlobFS",
+		"annotations": []
+	}
+}
