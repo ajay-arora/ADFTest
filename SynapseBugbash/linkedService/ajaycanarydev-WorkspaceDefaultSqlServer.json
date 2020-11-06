@@ -3,7 +3,7 @@
 	"type": "Microsoft.Synapse/workspaces/linkedservices",
 	"properties": {
 		"typeProperties": {
-			"connectionString": "Data Source=tcp:ajaycanarydev.database.windows.net,1433;Initial Catalog=@{linkedService().DBName}"
+			"connectionString": "Data Source=tcp:ajaycanarydev.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
 		"parameters": {
 			"DBName": {
@@ -11,6 +11,10 @@
 			}
 		},
 		"type": "AzureSqlDW",
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		},
 		"annotations": []
 	}
 }
