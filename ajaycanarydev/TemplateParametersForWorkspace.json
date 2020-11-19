@@ -8,8 +8,20 @@
 		"ajaycanarydev-WorkspaceDefaultSqlServer_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorage1_properties_typeProperties_serviceEndpoint": {
+			"value": "https://123.blob.core.windows.net"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://ajakv.vault.azure.net/"
+		},
 		"ajaycanarydev-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://ajaywsgen2.dfs.core.windows.net"
+		},
+		"CosmosDbMongoDbApi1_properties_typeProperties_connectionString_secretName": {
+			"value": "Secret"
+		},
+		"CosmosDbMongoDbApi1_properties_typeProperties_database": {
+			"value": "DbNam"
 		}
 	}
 }
